@@ -1,7 +1,6 @@
 package com.rinhabackend.rinhadebackend2024q1.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rinhabackend.rinhadebackend2024q1.domain.Cliente;
+import com.rinhabackend.rinhadebackend2024q1.model.ExtratoResponse;
 import com.rinhabackend.rinhadebackend2024q1.model.TransacaoRequest;
 import com.rinhabackend.rinhadebackend2024q1.model.TransacaoResponse;
 import com.rinhabackend.rinhadebackend2024q1.service.RinhaService;
@@ -33,12 +33,19 @@ public class RinhaController {
     return ResponseEntity.ok(clientes);
   }
 
-  @PostMapping("/{id}/transacao")
+  @PostMapping("/{id}/transacoes")
   public ResponseEntity<TransacaoResponse> realizarCredito(@PathVariable Long id,
       @RequestBody @Valid TransacaoRequest request) {
     TransacaoResponse transacao = rinhaService.transacao(id, request);
 
     return ResponseEntity.ok(transacao);
+  }
+
+  @GetMapping("/{id}/extrato")
+  public ResponseEntity<ExtratoResponse> extrato(@PathVariable Long id) {
+    ExtratoResponse extrato = rinhaService.extrato(id);
+
+    return ResponseEntity.ok(extrato);
   }
 
 }
