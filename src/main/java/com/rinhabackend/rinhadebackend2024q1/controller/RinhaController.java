@@ -34,7 +34,7 @@ public class RinhaController {
   }
 
   @PostMapping("/{id}/transacoes")
-  public ResponseEntity<TransacaoResponse> realizarCredito(@PathVariable Long id,
+  public ResponseEntity<TransacaoResponse> transacao(@PathVariable Long id,
       @RequestBody @Valid TransacaoRequest request) {
     TransacaoResponse transacao = rinhaService.transacao(id, request);
 
