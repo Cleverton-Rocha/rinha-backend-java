@@ -41,4 +41,8 @@ public class Cliente {
     this.saldo -= valor;
   }
 
+  public void criarTransacao(Transacao transacao) {
+    this.transacoes.add(transacao);
+  }
+
 }
