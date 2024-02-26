@@ -20,7 +20,7 @@ services:
           memory: '180MB'
 
   api01: &api
-    image: dockerfile
+    image: ultr444/rinha-backend-api-java:latest
     hostname: api01
     ports:
       - '8080:8080'
@@ -30,8 +30,6 @@ services:
       - SPRING_DATASOURCE_PASSWORD=docker
     depends_on:
       - postgres
-    build:
-      context: .
     deploy:
       resources:
         limits:
