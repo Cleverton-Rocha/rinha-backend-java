@@ -2,12 +2,8 @@ package com.rinhabackend.rinhadebackend2024q1.domain;
 
 import java.time.LocalDateTime;
 
-import com.rinhabackend.rinhadebackend2024q1.model.TipoTransacao;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -31,9 +27,8 @@ public class Transacao {
   @Column(nullable = false)
   private int valor;
 
-  @Enumerated(EnumType.STRING)
   @Column(nullable = false)
-  private TipoTransacao tipo;
+  private char tipo;
 
   @Column(length = 10)
   private String descricao;
