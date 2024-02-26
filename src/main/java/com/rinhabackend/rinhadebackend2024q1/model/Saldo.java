@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public record Saldo(
-    Integer total,
-    @JsonProperty("data_extrato") LocalDateTime dataExtrato,
-    Integer Limite) {
+        Integer total,
+        @JsonProperty("data_extrato") LocalDateTime dataExtrato,
+        Integer limite) {
 }
